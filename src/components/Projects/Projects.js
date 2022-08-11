@@ -130,7 +130,7 @@ function Projects() {
               blog="https://medium.com/@moovendhanr1011/anthropologie-website-clone-construct-week-unit-5-cf6c4438e841"
               techstack="TECH-STACKS: Reactjs, Node js, Expressjs, Heroku . "
               storage="DATABASE : MongoDb Atlas"
-            />
+            /> 
           </Col>
 
 
