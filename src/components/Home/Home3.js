@@ -12,9 +12,8 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-const resumeLink ="https://drive.google.com/file/d/1g9QgiIA3hCElCrv8J_aq8BahkguLeUOi/view?usp=sharing";
+const resumeLink ="https://drive.google.com/file/d/1ycANWGHgPUGeE3f6RSaEzNqzKK2NQl4z/view?usp=sharing";
 function Home3() {
-  // const resumeLink = "https://drive.google.com/file/d/1CjDzuzfKJDSVTbJmcck-UgbjOllpzz6U/view?usp=sharing";
 
   return (
     <Container fluid className="home-about-section" id="about">

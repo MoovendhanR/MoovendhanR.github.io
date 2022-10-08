@@ -30,7 +30,7 @@ function NavBar() {
     }
   }
 
-  const resumeLink = "https://drive.google.com/file/d/1g9QgiIA3hCElCrv8J_aq8BahkguLeUOi/view?usp=sharing";
+  const resumeLink = "https://drive.google.com/file/d/1ycANWGHgPUGeE3f6RSaEzNqzKK2NQl4z/view?usp=sharing";
 
   window.addEventListener("scroll", scrollHandler);
 
