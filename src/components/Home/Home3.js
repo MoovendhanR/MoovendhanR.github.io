@@ -12,7 +12,7 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-const resumeLink ="https://drive.google.com/file/d/1ycANWGHgPUGeE3f6RSaEzNqzKK2NQl4z/view?usp=sharing";
+const resume_link ="https://drive.google.com/file/d/1ycANWGHgPUGeE3f6RSaEzNqzKK2NQl4z/view?usp=sharing";
 function Home3() {
 
   return (
@@ -74,7 +74,7 @@ function Home3() {
       <Container>
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button variant="primary" href={resumeLink} target="_blank">
+          <Button variant="primary" href={resume_link} target="_blank">
             &nbsp;Download CV
           </Button>
         </Row>
