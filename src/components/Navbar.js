@@ -29,7 +29,7 @@ function NavBar() {
     }
   }
 
-  const resumeLink = "https://drive.google.com/file/d/1ycANWGHgPUGeE3f6RSaEzNqzKK2NQl4z/view?usp=sharing";
+  const resume_link = "https://drive.google.com/file/d/1ycANWGHgPUGeE3f6RSaEzNqzKK2NQl4z/view?usp=sharing";
 
   window.addEventListener("scroll", scrollHandler);
 
@@ -108,7 +108,7 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item className="fork-btn"  style={{ marginTop: "1rem" }}>
-              <Button variant="primary" href={resumeLink} target="_blank" className="fork-btn-inner">
+              <Button variant="primary" href={resume_link} target="_blank" className="fork-btn-inner">
                 &nbsp;Resume
               </Button>
             </Nav.Item>
