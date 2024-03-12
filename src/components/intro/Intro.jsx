@@ -3,9 +3,7 @@ import "./intro.css";
 import { FaAward } from "react-icons/fa";
 import React from "react";
 import { VscFolderLibrary } from "react-icons/vsc";
-import img from '../../assets/moovendhan.png'
-
-
+import img from "../../assets/moovendhan.png";
 
 const Intro = () => {
   return (
@@ -15,7 +13,7 @@ const Intro = () => {
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={img} alt="Moovendhan R"/>
+            <img src={img} alt="Moovendhan R" />
           </div>
         </div>
         <div className="about__content">
@@ -32,8 +30,17 @@ const Intro = () => {
             </article>
           </div>
           <p>
-           
-A seasoned Front End Developer with over two years of hands-on expertise in recognizing web-based user interactions and adeptly crafting highly responsive user interface components through the application of React principles. Proficient in translating design concepts and wireframes into top-notch code, demonstrating proficiency in JavaScript and React JS workflows. Possesses practical knowledge in full stack development, particularly in the MERN (MongoDB, Express.js, React, Node.js) stack. Demonstrates a keen ability to monitor and enhance frontend performance while effectively troubleshooting and debugging to optimize overall system functionality.
+            A seasoned Front End Developer with over two years of hands-on
+            expertise in recognizing web-based user interactions and adeptly
+            crafting highly responsive user interface components through the
+            application of React principles. Proficient in translating design
+            concepts and wireframes into top-notch code, demonstrating
+            proficiency in JavaScript and React JS workflows. Possesses
+            practical knowledge in full stack development, particularly in the
+            MERN (MongoDB, Express.js, React, Node.js) stack. Demonstrates a
+            keen ability to monitor and enhance frontend performance while
+            effectively troubleshooting and debugging to optimize overall system
+            functionality.
           </p>
           <a href="#contact" className="btn btn-primary">
             Let's Talk
