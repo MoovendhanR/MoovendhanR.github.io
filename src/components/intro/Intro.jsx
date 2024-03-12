@@ -5,7 +5,6 @@ import React from "react";
 import { VscFolderLibrary } from "react-icons/vsc";
 import img from '../../assets/moovendhan.png'
 
-// import ME from '../../assets/Rasif Tagizade image.jpg';
 
 
 const Intro = () => {
