@@ -3,7 +3,7 @@ import "./intro.css";
 import { FaAward } from "react-icons/fa";
 import React from "react";
 import { VscFolderLibrary } from "react-icons/vsc";
-import ProfileImg from "../../assets/moovendhan.png";
+// import ProfileImg from "../../assets/moovendhan.png";
 
 const Intro = () => {
   return (
@@ -13,7 +13,7 @@ const Intro = () => {
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={ProfileImg} alt="Moovendhan R" />
+            <img src={"https://github.com/MoovendhanR/MoovendhanR/assets/87975437/4eb478f7-61c8-483c-a801-04fc157612fc"} alt="Moovendhan R" />
           </div>
         </div>
         <div className="about__content">
