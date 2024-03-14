@@ -10,7 +10,7 @@ import React from "react";
 
 //Portfolio function
 const Portfolio = () => {
-  const soloProjects = [
+  const Projects = [
     {
       id: 1,
       title: "Nordstrom Clone",
@@ -78,7 +78,7 @@ const Portfolio = () => {
       <h2>Projects</h2>
 
       <div className="container portfolio__container">
-        {soloProjects.map((pro) => (
+        {Projects.map((pro) => (
           <article className="portfolio__item" key={pro.id}>
             <div className="portfolio__item-image">
               <img src={pro.img} alt={pro.title} />
