@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8bf6f4a8.css",
+    "main.js": "/static/js/main.b2f5c5ff.js",
+    "static/media/mariott.png": "/static/media/mariott.8d697828642feff3c2a0.png",
+    "static/media/anthropology.png": "/static/media/anthropology.0b3652d01f0fc2d13360.png",
+    "static/media/snapdeal.png": "/static/media/snapdeal.bb9a86586c557a3e685e.png",
+    "static/media/expedia.png": "/static/media/expedia.99c8f79dbf7b1f9323e4.png",
+    "static/media/moovendhan.png": "/static/media/moovendhan.d8545986f14b342a6ad9.png",
+    "static/media/nordstrom.png": "/static/media/nordstrom.7ca5005f59155f5f0e47.png",
+    "static/media/sephora.png": "/static/media/sephora.7ac71345d76d6da85ff0.png",
+    "index.html": "/index.html",
+    "main.8bf6f4a8.css.map": "/static/css/main.8bf6f4a8.css.map",
+    "main.b2f5c5ff.js.map": "/static/js/main.b2f5c5ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bf6f4a8.css",
+    "static/js/main.b2f5c5ff.js"
+  ]
+}
