@@ -2,7 +2,7 @@ import './contact.css';
 
 import React, { useRef, useState } from 'react';
 
-import { MdOutlineEmail } from 'react-icons/md';
+import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -40,11 +40,16 @@ const Contact = () => {
       <div className="container contact__container">
         <div className="contact__options">
           <article className="contact__option">
+          <MdOutlinePhone className="contact__option-icon" />
+            <h4>Contact</h4>
+            <h5>+91 7826839775</h5>
+            <br/>
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
             <h5>moovendhanr1011@gmail.com</h5>
             <a href="mailto:moovendhanr1011@gmail.com">Send a message</a>
           </article>
+         
         </div>
         <form ref={formRef} onSubmit={handleSubmit}>
           <input
