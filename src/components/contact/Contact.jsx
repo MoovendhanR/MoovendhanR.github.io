@@ -41,9 +41,12 @@ const Contact = () => {
         <div className="contact__options">
           <article className="contact__option">
           <MdOutlinePhone className="contact__option-icon" />
-            <h4>Contact</h4>
+            <h4>Mobile Number</h4>
             <h5>+91 7826839775</h5>
-            <br/>
+            <a href="tel:+91 7826839775">To call</a>
+            <br />
+            <br />
+           
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
             <h5>moovendhanr1011@gmail.com</h5>
