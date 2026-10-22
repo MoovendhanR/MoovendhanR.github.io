@@ -133,4 +133,9 @@ img {
   section > h2 {
     margin-bottom: 2rem;
   }
+
+  section > h2,
+  section > h5 {
+    padding: 0 1rem;
+  }
 }

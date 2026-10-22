@@ -12,6 +12,24 @@ import React from "react";
 const Portfolio = () => {
   const Projects = [
     {
+      id: 7,
+      title: "FinRight · Fix My PF",
+      featured: "PF",
+      description:
+        "Fintech platform that simplifies Provident Fund withdrawals, claims and grievances for EPF and CMPF members, with Cashfree payments, portal automation and an AI claim agent.",
+      technologies: "Node.js | Express | MongoDB | Redis | BullMQ | Playwright | LangChain | React | TypeScript | AWS",
+      link: "https://finright.in/",
+    },
+    {
+      id: 8,
+      title: "Thefynprint",
+      featured: "TF",
+      description:
+        "Personal-finance publication with articles and webinars: CMS backend with Meilisearch search, a React reader app and a React Native mobile app.",
+      technologies: "Node.js | MongoDB | Meilisearch | Redis | S3 | React | React Native",
+      link: "https://thefynprint.com/",
+    },
+    {
       id: 1,
       title: "Nordstrom Clone",
       img: IMG1,
@@ -81,7 +99,11 @@ const Portfolio = () => {
         {Projects.map((pro) => (
           <article className="portfolio__item" key={pro.id}>
             <div className="portfolio__item-image">
-              <img src={pro.img} alt={pro.title} />
+              {pro.img ? (
+                <img src={pro.img} alt={pro.title} />
+              ) : (
+                <div className="portfolio__item-featured">{pro.featured}</div>
+              )}
             </div>
             <div className="portfolio__item-content">
               <h3>{pro.title}</h3>
@@ -89,21 +111,23 @@ const Portfolio = () => {
               <p >{pro.technologies}</p>
             </div>
             <div className="portfolio__item-cta">
-              <a
-                href={pro.github}
-                target="_blank"
-                className="btn"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
+              {pro.github && (
+                <a
+                  href={pro.github}
+                  target="_blank"
+                  className="btn"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+              )}
               <a
                 href={pro.link}
                 target="_blank"
                 className="btn btn-primary"
                 rel="noreferrer"
               >
-                Live Demo
+                {pro.github ? "Live Demo" : "Visit Site"}
               </a>
             </div>
           </article>

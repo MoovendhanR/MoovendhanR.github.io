@@ -50,7 +50,12 @@
         width: var(--container-width-sm);
     }
 
+    .testimonial {
+        padding: 1.5rem 1rem;
+        border-radius: 1.5rem;
+    }
+
     .client__review {
-        width: var(--container-width-sm);
+        width: 100%;
     }
 }

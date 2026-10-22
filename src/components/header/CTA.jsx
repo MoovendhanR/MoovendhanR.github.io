@@ -4,7 +4,7 @@ import React from 'react';
 const CTA = () => {
   return (
     <div className="cta">
-      <a href={"https://drive.google.com/file/d/1ycANWGHgPUGeE3f6RSaEzNqzKK2NQl4z/view"} download className="btn">
+      <a href="./Moovendhan-R-Resume.pdf" download="Moovendhan-R-Resume.pdf" className="btn">
         Download CV
       </a>
       <a href="#contact" className="btn btn-primary">

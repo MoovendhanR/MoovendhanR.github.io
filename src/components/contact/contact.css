@@ -38,6 +38,7 @@
 
 .contact__option h5 {
     color: var(--color-light);
+    overflow-wrap: anywhere;
 }
 
 .contact__option h4 {

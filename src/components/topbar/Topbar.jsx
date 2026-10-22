@@ -5,6 +5,7 @@ import { BiBook } from 'react-icons/bi';
 import { RiServiceLine } from 'react-icons/ri';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { VscFeedback } from 'react-icons/vsc';
+import { MdWorkOutline } from 'react-icons/md';
 
 
 import './topbar.css';
@@ -15,6 +16,7 @@ const Topbar = () => {
     <nav>
       <a href="#home" onClick={()=> setActiveNav('#home')} className={activeNav === '#home' ? 'active' : ''}><AiOutlineHome /></a>
       <a href="#about" onClick={()=> setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}><AiOutlineUser /></a>
+      <a href="#work" onClick={()=> setActiveNav('#work')} className={activeNav === '#work' ? 'active' : ''}><MdWorkOutline /></a>
       <a href="#skills" onClick={()=> setActiveNav('#skills')} className={activeNav === '#skills' ? 'active' : ''}><BiBook /></a>
       <a href="#project" onClick={()=> setActiveNav('#project')} className={activeNav === '#project' ? 'active' : ''}><RiServiceLine /></a>
       <a href="#testmonials" onClick={()=> setActiveNav('#testmonials')} className={activeNav === '#testmonials' ? 'active' : ''}><VscFeedback /></a>

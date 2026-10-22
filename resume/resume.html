@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moovendhan R - Resume</title>
+<style>
+  @page { size: A4; margin: 10mm 12mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Calibri, Arial, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.42;
+    color: #1d2430;
+  }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: #1f5fbf; }
+
+  header { border-bottom: 2px solid #1f5fbf; padding-bottom: 8px; margin-bottom: 10px; }
+  h1 { font-size: 22pt; font-weight: 700; letter-spacing: 0.3px; }
+  .title { font-size: 11pt; font-weight: 600; color: #1f5fbf; margin-top: 1px; }
+  .contact { margin-top: 4px; font-size: 8.4pt; color: #3d4757; }
+  .contact span + span::before { content: "  |  "; color: #9aa3b2; }
+
+  h2 {
+    font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1.2px;
+    color: #1f5fbf; border-bottom: 1px solid #d5dbe5;
+    padding-bottom: 2px; margin: 10px 0 5px;
+  }
+  p.summary { text-align: justify; }
+
+  .skills { display: grid; grid-template-columns: 128px 1fr; row-gap: 2px; }
+  .skills dt { font-weight: 600; }
+
+  .job { margin-bottom: 6px; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-role { font-weight: 700; font-size: 10.2pt; }
+  .job-company { font-weight: 600; color: #1f5fbf; }
+  .job-date { font-size: 8.8pt; color: #3d4757; white-space: nowrap; }
+  .sub { font-weight: 600; font-size: 9pt; margin: 4px 0 1px; color: #3d4757; }
+  ul { padding-left: 14px; }
+  li { margin-bottom: 1.5px; }
+  .stack { font-size: 8.7pt; color: #3d4757; margin-top: 2px; }
+  .stack b { color: #1d2430; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; }
+  .edu-item { margin-bottom: 4px; }
+  .edu-item b { display: block; }
+  .muted { color: #3d4757; font-size: 8.8pt; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Moovendhan R</h1>
+  <div class="title">Full-Stack Engineer · Node.js · React · TypeScript · MongoDB · AWS</div>
+  <div class="contact">
+    <span>Bengaluru, India</span>
+    <span>+91 77086 92046</span>
+    <span><a href="mailto:moovendhanr1011@gmail.com">moovendhanr1011@gmail.com</a></span>
+    <span><a href="https://www.linkedin.com/in/moovendhan-r/">linkedin.com/in/moovendhan-r</a></span>
+    <span><a href="https://github.com/MoovendhanR">github.com/MoovendhanR</a></span>
+    <span><a href="https://moovendhanr.github.io/">moovendhanr.github.io</a></span>
+  </div>
+</header>
+
+<h2>Professional Summary</h2>
+<p class="summary">Full-stack engineer with 5+ years of hands-on experience in JavaScript and TypeScript, currently building fintech products at FinRight. 1,600+ commits across 7 production codebases: payments and subscriptions, government-portal automation, an AI claim agent, dashboards, a CMS and a mobile app. I take features from requirement to API design, UI, tests and deployment on AWS.</p>
+
+<h2>Technical Skills</h2>
+<dl class="skills">
+  <dt>Languages</dt><dd>JavaScript (ES6+), TypeScript, HTML5, CSS3</dd>
+  <dt>Frontend</dt><dd>React.js, React Native, Capacitor, Tailwind CSS, shadcn/ui, Mantine UI, TanStack Query, Zustand, Redux</dd>
+  <dt>Backend</dt><dd>Node.js, Express, REST APIs, Socket.IO, JWT auth, Swagger, Cashfree payments</dd>
+  <dt>Data &amp; Queues</dt><dd>MongoDB / Mongoose, Redis, BullMQ, Meilisearch</dd>
+  <dt>Automation &amp; AI</dt><dd>Playwright, Puppeteer, Cheerio, LangChain, Azure OpenAI</dd>
+  <dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, S3, SES), PM2, Git / GitHub</dd>
+  <dt>Testing &amp; Tools</dt><dd>Jest, Vitest, Supertest, Postman, Figma</dd>
+</dl>
+
+<h2>Work Experience</h2>
+
+<div class="job">
+  <div class="job-head">
+    <div><span class="job-role">Full-Stack Engineer</span> · <span class="job-company">FinRight</span> <span class="muted">(Bengaluru, Remote)</span></div>
+    <div class="job-date">Jan 2025 – Present</div>
+  </div>
+  <div class="sub">Fix My PF / CMPF Platform (finright.in)</div>
+  <ul>
+    <li>Built the auth and subscription service in Node.js, Express and MongoDB with JWT auth, rate limiting and Swagger docs.</li>
+    <li>Integrated Cashfree e-mandate and one-time payments: order lifecycle, webhooks, retries and deduplicated failure logs.</li>
+    <li>Built Playwright/Puppeteer automation for the EPFO and CMPF portals, running on BullMQ/Redis job queues.</li>
+    <li>Built an AI claim agent (LangChain + Azure OpenAI) that files EPFO claims, repairs broken selectors itself and resumes from checkpoints.</li>
+    <li>Shipped member and ops dashboards in React and TypeScript with real-time Socket.IO updates and Excel/PDF exports.</li>
+  </ul>
+  <div class="sub">Thefynprint (thefynprint.com)</div>
+  <ul>
+    <li>Built the CMS backend for articles and webinars with Meilisearch search, S3 media and Redis caching.</li>
+    <li>Built the React reader app and a React Native / Capacitor mobile app with push notifications.</li>
+    <li>Automated WhatsApp/email reminders, wrote Jest/Vitest tests and deployed on AWS with PM2.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div><span class="job-role">React Developer</span> · <span class="job-company">SA Digital Solutions Pvt. Ltd.</span> <span class="muted">(Bengaluru)</span></div>
+    <div class="job-date">Aug 2023 – Nov 2024</div>
+  </div>
+  <ul>
+    <li><b>ProLegal Serve:</b> led the rebuild of the legal-services dashboard in React, TypeScript and Mantine UI, improving navigation and accessibility.</li>
+    <li><b>Learn Indian Cuisine:</b> built the frontend of an AI-powered recipe-learning platform.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div><span class="job-role">UI/UX Designer &amp; React Developer</span> · <span class="job-company">Scintillate Alliance Pvt. Ltd.</span> <span class="muted">(Bengaluru)</span></div>
+    <div class="job-date">May 2023 – Aug 2023</div>
+  </div>
+  <ul>
+    <li>Designed wireframes and UI systems in Figma, then built them as responsive, pixel-accurate React components.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div><span class="job-role">Full-Stack Development Apprenticeship</span> · <span class="job-company">Masai School</span> <span class="muted">(Bengaluru)</span></div>
+    <div class="job-date">Sep 2021 – Apr 2023</div>
+  </div>
+  <ul>
+    <li>1,000+ hours of MERN, DSA and agile sprints; built Expedia, Sephora, Nordstrom and Marriott Bonvoy clones.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div><span class="job-role">Operations Associate</span> · <span class="job-company">bigbasket</span> <span class="muted">(Bengaluru)</span></div>
+    <div class="job-date">May 2018 – Jan 2021</div>
+  </div>
+  <ul>
+    <li>Worked in fast-paced grocery-delivery operations, building a strong sense of ownership and customer focus.</li>
+  </ul>
+</div>
+
+<div class="two-col">
+  <div>
+    <h2>Education</h2>
+    <div class="edu-item">
+      <b>Full-Stack Web Development (MERN)</b>
+      <span class="muted">Masai School · Aug 2021 – Jun 2022</span>
+    </div>
+    <div class="edu-item">
+      <b>BCA, Computer Applications</b>
+      <span class="muted">Karnataka College of Management &amp; Science · 2017 – 2020</span>
+    </div>
+    <div class="edu-item">
+      <b>Senior Secondary (PCM)</b>
+      <span class="muted">John Britto Higher Secondary School, Tamil Nadu · 2013 – 2015</span>
+    </div>
+  </div>
+  <div>
+    <h2>Certifications &amp; Interests</h2>
+    <div class="edu-item">
+      <b>MERN Stack Developer Certification</b>
+      <span class="muted">Masai School</span>
+    </div>
+    <div class="edu-item">
+      <b>Masai Coding Workshop</b>
+      <span class="muted">Masai School</span>
+    </div>
+    <div class="edu-item">
+      <b>Interests</b>
+      <span class="muted">Chess · Travelling · Swimming · Cricket</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

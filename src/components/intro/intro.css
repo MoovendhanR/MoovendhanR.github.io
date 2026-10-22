@@ -5,22 +5,46 @@
 }
 
 .about__me {
+    position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    border-radius: 2rem;
-    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-    display: grid;
-    place-items: center;
+    border-radius: 50%;
+    padding: 6%;
+    background: linear-gradient(135deg, #5ee0e6, var(--color-primary) 45%, var(--color-bg-variant));
+    box-shadow: 0 0 3rem rgba(77, 181, 255, 0.25);
 }
 
 .about__me-image {
-    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     overflow: hidden;
+    border: 4px solid var(--color-bg);
     transition: var(--transition);
 }
 
-.about__me-image:hover {
-    transform: scale(1.1);
+.about__me-image img {
+    height: 100%;
+}
+
+.about__me:hover .about__me-image {
+    transform: scale(1.04);
+}
+
+.about__me-badge {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 0.35rem 1.1rem;
+    border-radius: 2rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
 }
 
 .about__cards {
@@ -60,8 +84,12 @@
 }
 
 .about__content p {
-    margin: 2rem 0 2.6rem;
+    margin: 2rem 0 0;
     color: var(--color-light);
+}
+
+.about__content p:last-of-type {
+    margin: 1rem 0 2.6rem;
 }
 
 @media screen and (max-width: 1024px){
@@ -89,6 +117,10 @@
     .about__cards {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+    }
+
+    .about__card {
+        padding: 1.2rem 0.8rem;
     }
 
     .about__content {

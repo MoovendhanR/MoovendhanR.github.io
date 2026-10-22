@@ -10,6 +10,22 @@ header {
   position: relative;
 }
 
+.header__tagline {
+  color: var(--color-light);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.header__badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--color-primary-variant);
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+}
+
 .cta {
   display: flex;
   justify-content: center;
