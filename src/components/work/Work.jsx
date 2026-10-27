@@ -18,6 +18,17 @@ const Work = () => {
       stack: 'Node.js · React · TypeScript · MongoDB · Redis · Playwright · LangChain · AWS',
     },
     {
+      id: 5,
+      role: 'Freelance Developer',
+      company: 'Independent',
+      period: 'Alongside full-time roles',
+      location: 'Remote',
+      points: [
+        'Delivered 5+ freelance projects for clients, owning each one end to end: scoping, design, build and deployment',
+      ],
+      stack: 'Client work · End to end',
+    },
+    {
       id: 2,
       role: 'React Developer',
       company: 'SA Digital Solutions',

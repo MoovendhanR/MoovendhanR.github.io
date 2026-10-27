@@ -217,6 +217,10 @@
   gap: 1rem;
 }
 
+.journey__cards--single {
+  grid-template-columns: minmax(0, 22rem);
+}
+
 .journey__card {
   background: var(--j-glass);
   border: 1px solid var(--j-line);

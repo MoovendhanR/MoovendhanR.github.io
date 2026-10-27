@@ -2,7 +2,20 @@
 // Layers: engine hum and road/wind noise that follow riding speed, plus one
 // ambience per kind of place (night crickets, dawn birds, city hum, neon pad).
 
-const AMBIENCE_BY_CHAPTER = ['crickets', 'birds', 'birds', 'city', 'city', 'city', 'neon', 'crickets'];
+import { chapters } from './chapters';
+
+const AMBIENCE_BY_ID = {
+  prologue: 'crickets',
+  village: 'birds',
+  highway: 'birds',
+  delivery: 'city',
+  masai: 'city',
+  firstjobs: 'city',
+  freelance: 'city',
+  finright: 'neon',
+  contact: 'crickets',
+};
+const AMBIENCE_BY_CHAPTER = chapters.map((c) => AMBIENCE_BY_ID[c.id] || 'city');
 const ENGINE_BY_VEHICLE = { bicycle: 0, 'scooter-crate': 1, scooter: 1, motorbike: 1.35 };
 
 function noiseBuffer(ctx, seconds) {

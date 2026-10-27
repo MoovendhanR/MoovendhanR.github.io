@@ -2,12 +2,11 @@ import './journey.css';
 
 import React, { useEffect, useRef, useState } from 'react';
 
-import { chapters, finrightCards, links, skills } from './chapters';
+import { chapters, links, skills } from './chapters';
 import { createSound } from './sound';
 import { createWorld } from './world';
 
 const COUNT = chapters.length;
-const FINRIGHT_INDEX = chapters.findIndex((c) => c.id === 'finright');
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const GFX_MODES = ['auto', 'high', 'low'];
 const SLOW_FRAME_MS = 30;
@@ -25,7 +24,7 @@ const readSavedGfx = () => {
 const Journey = () => {
   const canvasRef = useRef(null);
   const chapterRefs = useRef([]);
-  const cardRefs = useRef([]);
+  const cardRefs = useRef({});
   const hintRef = useRef(null);
   const worldRef = useRef(null);
   const soundRef = useRef(null);
@@ -79,11 +78,14 @@ const Journey = () => {
         el.style.visibility = opacity > 0.01 ? 'visible' : 'hidden';
         el.style.pointerEvents = opacity > 0.6 ? 'auto' : 'none';
       });
-      const local = (p - FINRIGHT_INDEX / COUNT) * COUNT;
-      cardRefs.current.forEach((el, k) => {
-        if (!el) return;
-        const shown = local > 0.5 + k * 0.08 && local < 0.97;
-        el.classList.toggle('is-shown', shown);
+      // Cards appear one after another in the second half of their chapter.
+      chapters.forEach((c, i) => {
+        if (!c.cards) return;
+        const local = (p - i / COUNT) * COUNT;
+        c.cards.forEach((card, k) => {
+          const el = cardRefs.current[`${c.id}-${k}`];
+          if (el) el.classList.toggle('is-shown', local > 0.5 + k * 0.08 && local < 0.97);
+        });
       });
       if (hintRef.current) hintRef.current.style.opacity = clamp01(1 - p * 40);
     };
@@ -237,15 +239,17 @@ const Journey = () => {
           </article>
         ))}
 
-        <div className="journey__cards" aria-label="Work at FinRight">
-          {finrightCards.map((card, k) => (
-            <div key={card.title} ref={(el) => { cardRefs.current[k] = el; }} className="journey__card">
-              <h3>{card.title}</h3>
-              <p>{card.body}</p>
-              <small>{card.tags}</small>
-            </div>
-          ))}
-        </div>
+        {chapters.filter((c) => c.cards).map((c) => (
+          <div key={c.id} className={`journey__cards journey__cards--${c.cards.length === 1 ? 'single' : 'grid'}`} aria-label={c.title}>
+            {c.cards.map((card, k) => (
+              <div key={card.title} ref={(el) => { cardRefs.current[`${c.id}-${k}`] = el; }} className="journey__card">
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+                <small>{card.tags}</small>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
 
       <div className="journey__controls">

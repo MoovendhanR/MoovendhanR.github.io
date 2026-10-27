@@ -52,12 +52,49 @@ export const chapters = [
     sky: { top: '#121838', bottom: '#56386c', fog: '#36294d', ground: '#1f1d26', light: 0.4, sun: 0.1, windows: 1, neon: 0.4, stars: 0.6 },
   },
   {
+    id: 'freelance',
+    label: 'Chapter 06 — Late Night · Freelance',
+    title: 'The Side Hustle',
+    text: '5+ freelance projects for clients, each one owned end to end: requirements, design, build and deployment.',
+    vehicle: 'scooter',
+    sky: { top: '#0b1030', bottom: '#3d2a5e', fog: '#271d40', ground: '#17151f', light: 0.35, sun: 0, windows: 1, neon: 0.6, stars: 0.7 },
+    cards: [
+      {
+        title: '5+ freelance projects',
+        body: 'Client work alongside full-time roles. One developer from first call to launch: scoping, UI, APIs and deployment.',
+        tags: 'CLIENT WORK · END TO END',
+      },
+    ],
+  },
+  {
     id: 'finright',
-    label: 'Chapter 06 — Neon Night · FinRight · 2025–Now',
+    label: 'Chapter 07 — Neon Night · FinRight · 2025–Now',
     title: 'Fintech After Dark',
     text: 'Payments, automation and AI for Provident Fund members. 1,600+ commits across 7 production codebases.',
     vehicle: 'motorbike',
     sky: { top: '#04050e', bottom: '#1d0f3d', fog: '#120a26', ground: '#0d0b14', light: 0.3, sun: 0, windows: 1, neon: 1, stars: 0.8 },
+    cards: [
+      {
+        title: 'Payments that clear',
+        body: 'Cashfree e-mandate subscriptions and one-time payments: order lifecycle, webhooks, retries and deduplicated failure logs.',
+        tags: 'CASHFREE · NODE.JS · MONGODB',
+      },
+      {
+        title: 'Government-portal automation',
+        body: 'Playwright/Puppeteer pipelines for the EPFO and CMPF portals, running on BullMQ/Redis job queues.',
+        tags: 'PLAYWRIGHT · BULLMQ · REDIS',
+      },
+      {
+        title: 'An AI agent that files claims',
+        body: 'LangChain + Azure OpenAI agent that fills in EPFO claims, repairs broken selectors itself and resumes from checkpoints.',
+        tags: 'LANGCHAIN · AZURE OPENAI',
+      },
+      {
+        title: 'Dashboards, CMS & mobile',
+        body: 'React + TypeScript member and ops dashboards, the Thefynprint CMS with Meilisearch, and a React Native app.',
+        tags: 'REACT · TYPESCRIPT · REACT NATIVE',
+      },
+    ],
   },
   {
     id: 'contact',
@@ -66,30 +103,6 @@ export const chapters = [
     text: 'Open to Full-Stack and Backend roles in fintech, SaaS or AI-product teams. Bengaluru or remote.',
     vehicle: 'motorbike',
     sky: { top: '#0e1636', bottom: '#40548f', fog: '#273153', ground: '#121521', light: 0.45, sun: 0.1, windows: 0.8, neon: 0.3, stars: 1 },
-  },
-];
-
-// Pinned cards shown during the FinRight chapter.
-export const finrightCards = [
-  {
-    title: 'Payments that clear',
-    body: 'Cashfree e-mandate subscriptions and one-time payments: order lifecycle, webhooks, retries and deduplicated failure logs.',
-    tags: 'CASHFREE · NODE.JS · MONGODB',
-  },
-  {
-    title: 'Government-portal automation',
-    body: 'Playwright/Puppeteer pipelines for the EPFO and CMPF portals, running on BullMQ/Redis job queues.',
-    tags: 'PLAYWRIGHT · BULLMQ · REDIS',
-  },
-  {
-    title: 'An AI agent that files claims',
-    body: 'LangChain + Azure OpenAI agent that fills in EPFO claims, repairs broken selectors itself and resumes from checkpoints.',
-    tags: 'LANGCHAIN · AZURE OPENAI',
-  },
-  {
-    title: 'Dashboards, CMS & mobile',
-    body: 'React + TypeScript member and ops dashboards, the Thefynprint CMS with Meilisearch, and a React Native app.',
-    tags: 'REACT · TYPESCRIPT · REACT NATIVE',
   },
 ];
 
@@ -106,22 +119,24 @@ export const links = {
   classic: './?view=classic',
 };
 
-// Billboards and signs along the road: which chapter they sit in, where in that
+// Billboards and signs along the road: which chapter (by id) they sit in, where in that
 // stretch (0–1), which side of the road, and what they say.
 export const signs = [
-  { chapter: 0, at: 0.55, side: 1, style: 'milestone', lines: ['BENGALURU', '312'] },
-  { chapter: 1, at: 0.3, side: -1, style: 'board', lines: ['HIGHER SECONDARY · PCM', 'Class of 2015'] },
-  { chapter: 1, at: 0.75, side: 1, style: 'milestone', lines: ['BENGALURU', '240'] },
-  { chapter: 2, at: 0.35, side: 1, style: 'highway', lines: ['BENGALURU', 'BCA · 2017 →'] },
-  { chapter: 2, at: 0.8, side: -1, style: 'milestone', lines: ['BENGALURU', '12'] },
-  { chapter: 3, at: 0.4, side: -1, style: 'board', lines: ['DELIVERY RUNS', '2018 – 2021'] },
-  { chapter: 4, at: 0.35, side: 1, style: 'board', lines: ['MASAI SCHOOL', 'MERN · DSA · 1,000+ HRS'] },
-  { chapter: 5, at: 0.3, side: -1, style: 'board', lines: ['FIGMA → REACT', 'Scintillate Alliance'] },
-  { chapter: 5, at: 0.7, side: 1, style: 'board', lines: ['PROLEGAL SERVE', 'React · TypeScript'] },
-  { chapter: 6, at: 0.08, side: -1, style: 'neon', lines: ['FINRIGHT'], color: '#4db5ff' },
-  { chapter: 6, at: 0.2, side: 1, style: 'neon', lines: ['CASHFREE ₹'], color: '#ff4fd8' },
-  { chapter: 6, at: 0.32, side: -1, style: 'neon', lines: ['PLAYWRIGHT × BULLMQ'], color: '#3cf2c2' },
-  { chapter: 6, at: 0.44, side: 1, style: 'neon', lines: ['AI CLAIM AGENT'], color: '#ffd23c' },
-  { chapter: 6, at: 0.95, side: -1, style: 'neon', lines: ['1,600+ COMMITS'], color: '#4db5ff' },
-  { chapter: 7, at: 0.45, side: 1, style: 'board', lines: ['OPEN TO WORK', 'Full-Stack · Backend'] },
+  { chapter: 'prologue', at: 0.55, side: 1, style: 'milestone', lines: ['BENGALURU', '312'] },
+  { chapter: 'village', at: 0.3, side: -1, style: 'board', lines: ['HIGHER SECONDARY · PCM', 'Class of 2015'] },
+  { chapter: 'village', at: 0.75, side: 1, style: 'milestone', lines: ['BENGALURU', '240'] },
+  { chapter: 'highway', at: 0.35, side: 1, style: 'highway', lines: ['BENGALURU', 'BCA · 2017 →'] },
+  { chapter: 'highway', at: 0.8, side: -1, style: 'milestone', lines: ['BENGALURU', '12'] },
+  { chapter: 'delivery', at: 0.4, side: -1, style: 'board', lines: ['DELIVERY RUNS', '2018 – 2021'] },
+  { chapter: 'masai', at: 0.35, side: 1, style: 'board', lines: ['MASAI SCHOOL', 'MERN · DSA · 1,000+ HRS'] },
+  { chapter: 'firstjobs', at: 0.3, side: -1, style: 'board', lines: ['FIGMA → REACT', 'Scintillate Alliance'] },
+  { chapter: 'firstjobs', at: 0.7, side: 1, style: 'board', lines: ['PROLEGAL SERVE', 'React · TypeScript'] },
+  { chapter: 'freelance', at: 0.3, side: 1, style: 'board', lines: ['5+ FREELANCE PROJECTS', 'Scope → Design → Build → Ship'] },
+  { chapter: 'freelance', at: 0.62, side: -1, style: 'neon', lines: ['FREELANCE'], color: '#ff8a3c' },
+  { chapter: 'finright', at: 0.08, side: -1, style: 'neon', lines: ['FINRIGHT'], color: '#4db5ff' },
+  { chapter: 'finright', at: 0.2, side: 1, style: 'neon', lines: ['CASHFREE ₹'], color: '#ff4fd8' },
+  { chapter: 'finright', at: 0.32, side: -1, style: 'neon', lines: ['PLAYWRIGHT × BULLMQ'], color: '#3cf2c2' },
+  { chapter: 'finright', at: 0.44, side: 1, style: 'neon', lines: ['AI CLAIM AGENT'], color: '#ffd23c' },
+  { chapter: 'finright', at: 0.95, side: -1, style: 'neon', lines: ['1,600+ COMMITS'], color: '#4db5ff' },
+  { chapter: 'contact', at: 0.45, side: 1, style: 'board', lines: ['OPEN TO WORK', 'Full-Stack · Backend'] },
 ];

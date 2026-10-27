@@ -10,6 +10,8 @@ const LANE_X = -2; // India keeps left
 const CAMERA_HEIGHT = 2.3;
 const VEHICLE_AHEAD = 6.5;
 
+// Chapter positions by id, so adding a chapter doesn't shift the scenery.
+const C = Object.fromEntries(chapters.map((c, i) => [c.id, i]));
 const stretchStart = (chapter) => -chapter * STRETCH;
 const zAt = (chapter, at) => stretchStart(chapter) - at * STRETCH;
 
@@ -166,7 +168,7 @@ export function createWorld(canvas, { lowPower }) {
   const palmLeaves = [];
   const fields = [];
   const fieldColors = [];
-  for (let z = 40; z > zAt(2, 1); z -= 9 / density) {
+  for (let z = 40; z > zAt(C.highway, 1); z -= 9 / density) {
     const x = roadsideX(4, 40);
     const h = between(5, 9);
     const lean = between(-0.12, 0.12);
@@ -176,7 +178,7 @@ export function createWorld(canvas, { lowPower }) {
       palmLeaves.push({ x: x - Math.sin(lean) * h + Math.cos(angle) * 1.3, y: h - 0.2, z: z + Math.sin(angle) * 1.3, ry: -angle, rz: Math.PI / 2 - 0.5, sx: 0.35, sy: 2.6, sz: 0.9 });
     }
   }
-  for (let z = 30; z > zAt(2, 0.7); z -= 16) {
+  for (let z = 30; z > zAt(C.highway, 0.7); z -= 16) {
     [-1, 1].forEach((side) => {
       if (random() < 0.25) return;
       fields.push({ x: side * between(16, 60), y: 0.06, z, sx: between(14, 30), sy: 0.1, sz: 13 });
@@ -191,7 +193,7 @@ export function createWorld(canvas, { lowPower }) {
   const treeTrunks = [];
   const treeCrowns = [];
   const crownColors = [];
-  for (let z = zAt(2, 0); z > zAt(4, 0.5); z -= 10 / density) {
+  for (let z = zAt(C.highway, 0); z > zAt(C.masai, 0.5); z -= 10 / density) {
     const x = roadsideX(5, 30);
     const s = between(0.8, 1.5);
     treeTrunks.push({ x, y: 1.5 * s, z, sy: 3 * s });
@@ -205,10 +207,10 @@ export function createWorld(canvas, { lowPower }) {
   const houses = [];
   const houseColors = [];
   const roofs = [];
-  for (let z = 10; z > zAt(1, 1); z -= 14 / density) {
+  for (let z = 10; z > zAt(C.village, 1); z -= 14 / density) {
     if (random() < 0.35) continue;
     const x = roadsideX(6, 22);
-    if (x < 0 && Math.abs(z - zAt(1, 0.55)) < 12) continue; // leave room for the gopuram
+    if (x < 0 && Math.abs(z - zAt(C.village, 0.55)) < 12) continue; // leave room for the gopuram
     const w = between(4, 7);
     const d = between(4, 6);
     houses.push({ x, y: 1.4, z, sx: w, sy: 2.8, sz: d });
@@ -231,7 +233,7 @@ export function createWorld(canvas, { lowPower }) {
   const kalasam = new THREE.Mesh(track(new THREE.SphereGeometry(0.9, 10, 8)), track(new THREE.MeshLambertMaterial({ color: 0xe0b23c, emissive: 0x332200 })));
   kalasam.position.y = 16.4;
   gopuram.add(kalasam);
-  gopuram.position.set(-19, 0, zAt(1, 0.55));
+  gopuram.position.set(-19, 0, zAt(C.village, 0.55));
   gopuram.rotation.y = 0.35;
   scene.add(gopuram);
 
@@ -311,10 +313,11 @@ export function createWorld(canvas, { lowPower }) {
 
   // Outskirts (low), city (mid) and neon district (tall).
   const districts = [
-    { from: zAt(3, 0.05), to: zAt(3, 1), minH: 6, maxH: 14, gap: 7, chance: 0.6, variants: [0, 2] },
-    { from: zAt(4, 0), to: zAt(4, 1), minH: 10, maxH: 26, gap: 6, chance: 0.85, variants: [0, 1, 2] },
-    { from: zAt(5, 0), to: zAt(5, 1), minH: 14, maxH: 40, gap: 6, chance: 0.95, variants: [1, 3] },
-    { from: zAt(6, 0), to: zAt(6, 1), minH: 24, maxH: 64, gap: 7, chance: 1, variants: [3] },
+    { from: zAt(C.delivery, 0.05), to: zAt(C.delivery, 1), minH: 6, maxH: 14, gap: 7, chance: 0.6, variants: [0, 2], neon: 0 },
+    { from: zAt(C.masai, 0), to: zAt(C.masai, 1), minH: 10, maxH: 26, gap: 6, chance: 0.85, variants: [0, 1, 2], neon: 0 },
+    { from: zAt(C.firstjobs, 0), to: zAt(C.firstjobs, 1), minH: 14, maxH: 40, gap: 6, chance: 0.95, variants: [1, 3], neon: 0 },
+    { from: zAt(C.freelance, 0), to: zAt(C.freelance, 1), minH: 16, maxH: 46, gap: 6, chance: 0.95, variants: [1, 3], neon: 0.35 },
+    { from: zAt(C.finright, 0), to: zAt(C.finright, 1), minH: 24, maxH: 64, gap: 7, chance: 1, variants: [3], neon: 1 },
   ];
   const neonMaterials = [];
   const neonColors = ['#ff4fd8', '#3cf2c2', '#4db5ff', '#ffd23c'];
@@ -324,7 +327,7 @@ export function createWorld(canvas, { lowPower }) {
     return material;
   };
   const neonPool = neonColors.map(neonMaterialFor);
-  districts.forEach((district, index) => {
+  districts.forEach((district) => {
     [-1, 1].forEach((side) => {
       for (let z = district.from; z > district.to; z -= between(10, 16) / density) {
         if (random() > district.chance) continue;
@@ -333,7 +336,7 @@ export function createWorld(canvas, { lowPower }) {
         const x = side * (ROAD_HALF_WIDTH + district.gap + width / 2 + between(0, 3));
         const variant = district.variants[Math.floor(random() * district.variants.length)];
         const { w, h } = addBuilding(x, z, width, between(district.minH, district.maxH), depth, variant);
-        if (index === 3) {
+        if (random() < district.neon) {
           // Neon edge strips facing the road.
           const strip = neonPool[Math.floor(random() * neonPool.length)];
           const faceX = x - side * (w / 2 + 0.05);
@@ -355,7 +358,7 @@ export function createWorld(canvas, { lowPower }) {
   // Distant city lights for the epilogue viewpoint.
   const cityLightPositions = [];
   for (let i = 0; i < 900 * density; i += 1) {
-    cityLightPositions.push(between(-260, 260), between(-30, 6), zAt(7, 1) - between(60, 280));
+    cityLightPositions.push(between(-260, 260), between(-30, 6), zAt(C.contact, 1) - between(60, 280));
   }
   const cityLightGeometry = track(new THREE.BufferGeometry());
   cityLightGeometry.setAttribute('position', new THREE.Float32BufferAttribute(cityLightPositions, 3));
@@ -363,13 +366,13 @@ export function createWorld(canvas, { lowPower }) {
 
   // Guard rail where the road ends.
   const rail = new THREE.Mesh(track(new THREE.BoxGeometry(ROAD_HALF_WIDTH * 2 + 4, 0.5, 0.3)), track(new THREE.MeshLambertMaterial({ color: 0xd0d0d0, emissive: 0x222222 })));
-  rail.position.set(0, 0.9, zAt(7, 0.95));
+  rail.position.set(0, 0.9, zAt(C.contact, 0.95));
   scene.add(rail);
 
   // Street lights from the highway onwards.
   const poles = [];
   const lamps = [];
-  for (let z = zAt(2, 0.2); z > zAt(7, 0.9); z -= 26 / density) {
+  for (let z = zAt(C.highway, 0.2); z > zAt(C.contact, 0.9); z -= 26 / density) {
     [-1, 1].forEach((side) => {
       const x = side * (ROAD_HALF_WIDTH + 1);
       poles.push({ x, y: 3.5, z, sy: 7 });
@@ -385,7 +388,7 @@ export function createWorld(canvas, { lowPower }) {
   const vanCabs = [];
   const vanWheels = [];
   for (let i = 0; i < 7; i += 1) {
-    const z = zAt(3, 0.1 + i * 0.12);
+    const z = zAt(C.delivery, 0.1 + i * 0.12);
     const side = i % 2 ? 1 : -1;
     const x = side * (ROAD_HALF_WIDTH + 2.2);
     vanBodies.push({ x, y: 1.5, z, sx: 2, sy: 2.2, sz: 3.4 });
@@ -413,7 +416,7 @@ export function createWorld(canvas, { lowPower }) {
 
   signs.forEach((sign) => {
     const group = new THREE.Group();
-    const z = zAt(sign.chapter, sign.at);
+    const z = zAt(C[sign.chapter], sign.at);
     if (sign.style === 'milestone') {
       const tex = textCanvas(128, 192, (ctx, w, h) => {
         ctx.fillStyle = '#f4f1e6';
