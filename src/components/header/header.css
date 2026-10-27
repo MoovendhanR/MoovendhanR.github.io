@@ -26,6 +26,12 @@ header {
   color: var(--color-primary);
 }
 
+.header__journey {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+}
+
 .cta {
   display: flex;
   justify-content: center;

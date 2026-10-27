@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ccc88ec7.css",
-    "main.js": "/static/js/main.3f8ecdd1.js",
+    "main.css": "/static/css/main.9859f7a1.css",
+    "main.js": "/static/js/main.8457c433.js",
     "static/media/mariott.png": "/static/media/mariott.8d697828642feff3c2a0.png",
     "static/media/anthropology.png": "/static/media/anthropology.0b3652d01f0fc2d13360.png",
     "static/media/snapdeal.png": "/static/media/snapdeal.bb9a86586c557a3e685e.png",
@@ -9,12 +9,10 @@
     "static/media/moovendhan-profile.png": "/static/media/moovendhan-profile.97b405dc65b119fc13df.png",
     "static/media/nordstrom.png": "/static/media/nordstrom.7ca5005f59155f5f0e47.png",
     "static/media/sephora.png": "/static/media/sephora.7ac71345d76d6da85ff0.png",
-    "index.html": "/index.html",
-    "main.ccc88ec7.css.map": "/static/css/main.ccc88ec7.css.map",
-    "main.3f8ecdd1.js.map": "/static/js/main.3f8ecdd1.js.map"
+    "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.ccc88ec7.css",
-    "static/js/main.3f8ecdd1.js"
+    "static/css/main.9859f7a1.css",
+    "static/js/main.8457c433.js"
   ]
 }

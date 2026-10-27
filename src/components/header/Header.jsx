@@ -14,6 +14,7 @@ const Header = () => {
           Fintech · Payments · Browser Automation · AI Agents
         </p>
         <span className="header__badge">Open to Full-Stack / Backend roles</span>
+        <a href="./" className="header__journey">Take the 3D journey →</a>
         <CTA />
         <a href="#contact" className="scroll__down">
           Scroll Down
